@@ -10,7 +10,9 @@ export function* getDataTodayBrazil() {
     const yesterday = new Date();
 
     now.setDate(now.getDate() - 2);
-    yesterday.setDate(now.getDate() - 1);
+    yesterday.setDate(yesterday.getDate() - 1);
+
+    console.log(yesterday.toLocaleDateString())
 
     const { data: dataYesterDay } = yield call(
       api.get,
@@ -45,19 +47,9 @@ function formatData(data) {
     return acum + obj["deaths"];
   }, 0);
 
-  const Suspeitos = data["data"].reduce((acum, obj) => {
-    return acum + obj["suspects"];
-  }, 0);
-
-  const Negados = data["data"].reduce((acum, obj) => {
-    return acum + obj["refuses"];
-  }, 0);
-
   const dataFormatted = {
     Casos,
     Mortes,
-    Suspeitos,
-    Negados
   };
 
   return dataFormatted;
@@ -69,7 +61,7 @@ function formatDateToAPI(date) {
   return `${year}${month}${day}`
 }
 
-function subtractData(dataToday, dataYesterday) {
+function subtractData(dataYesterday, dataToday) {
   const data = {};
   const keys = Object.keys(dataYesterday);
 

@@ -22,6 +22,7 @@ export const Container = styled.div`
     @media (max-width: 1200px) {
         grid-template-columns: auto;  
         grid-template-rows: 80px auto auto;
+        grid-gap:24px;
         grid-template-areas:
         "MH"
         "CG"

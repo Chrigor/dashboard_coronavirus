@@ -24,6 +24,13 @@ export const ContainerSideGrapich = styled.div`
   > div + div {
     margin-top: 8px;
   }
+
+  @media (max-width: 1200px) {
+    > div {
+      margin-bottom: 3rem;
+    }
+
+  }
 `;
 
 export const ContainerGrapichMain = styled.div`
