@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ContainerSideGrapich, ContainerGrapichMain, Header, TitleChart } from './styles';
-import { Bar, Line } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 import { useDispatch, useSelector } from 'react-redux';
 
 import { loadRequest as loadRequestDataToday } from '../../store/ducks/dataToday/actions';
